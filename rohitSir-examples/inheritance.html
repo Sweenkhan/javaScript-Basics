@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+    
+
+    <script>
+        // Inheritance: is the bility to transfer properties from one class to another
+
+        // Bird: parent class / base class
+
+        // Parrot: child class/ sub class
+
+        // Any sub class inherits only the public & the protected properties from the base class. the private properties are not inherited
+        //    Private properties cannot be accessed outside the scope of that class.
+         
+        class Birds {
+            wings(){
+                console.log('Bird has wings')
+            }
+
+            #hieght(){
+                console.log('height')
+            }
+        }
+
+
+
+
+        class Parrot extends Birds{
+            //wings
+        }
+
+
+
+        const b1 = new Birds()
+        b1.wings();
+
+
+        const p1 = new Parrot()
+        p1.wings();
+        p1.hieght();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currying</title>
+</head>
+<body>
+    
+
+    <script>
+        
+    // arrow function with multiple argument
+
+        // const volume = (l, b, h) => {
+        //           return l*b*h
+        // }
+
+        // console.log(volume(2,5,10))
+
+
+
+
+    // currying: Transforming a function which takes multiple arguments, into a  series of functions which all take single arguments is called currying 
+        
+        const volume2 = (l) => { 
+            return function(b) { 
+                return function(h) {
+                    return l*b*h
+                }
+            }
+        }
+         
+
+        console.log(volume2(10)(5)(10))
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice and splice</title>
+</head>
+<body>
+    
+
+    <script>
+ 
+// example => .slice()
+
+        const desk = ['Laptop', 'mouse', 'speakers', 'Monitor', 'Microphone',];
+        
+        // from 3 to till end of array.
+        console.log(desk.slice(3));
+
+        // from 1 to 4-1.
+        console.log(desk.slice(1, 4));
+
+
+// example2 => .slice();    
+       const keys = ['XDC-102-2206', 'XDC-754-1510', 'XDC-998-0311'];
+       
+       const datestrings = keys.map((elem) => elem.slice(8));
+
+       console.log(datestrings);
+
+
+
+
+//  example => .splice()  
+
+       const deske = ['Laptop', 'mouse', 'speakers', 'Monitor', 'Microphone',];    
+         
+       // remove 2 item from index [1]
+          console.log(deske.splice(1,2));
+
+      // remove 2 item from index 1 and add 3 items
+         deske.splice(1, 2, 'keyboard', 'router', 'wifi');
+
+         console.log(deske);
+
+
+    </script>
+</body>
+</html>

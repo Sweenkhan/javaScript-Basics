@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let arr = [14, 5, 6, 7]
+
+        // let sum = 0;
+
+        // for(let i = 0; i < arr.length; i++){
+        //     // sum += arr[i]
+        //     sum = sum + arr[i]
+            
+        // }
+
+         
+          let min = arr[0];
+          let max = arr[0];
+
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] < min) {
+                min = arr[i]
+            } if(arr[i] > max) {
+                min = arr[i]
+            }
+        }
+
+        
+        //  console.log(min)
+        //  console.log(max)
+
+
+                                                //  map function
+                                                // it will give return an array
+
+    //    const increase =  arr.map((a) => {
+    //          return a + 7
+    //     });
+
+    //    console.log(increase)
+                                                         
+
+                                                // filter function
+                                                // it will give return an array
+
+    // const filtring = arr.filter((a) => {
+    //     return a != 7
+    // })
+
+    // console.log(filtring)
+
+
+                                               //reduce
+                                            //    it will give return a single value
+
+     
+    const sum = arr.reduce((accum, curr, index) => {
+                   console.log(index)
+                   return accum + curr ;
+                    
+    })            
+    
+    console.log(sum)
+
+         
+    </script>
+</body>
+</html>

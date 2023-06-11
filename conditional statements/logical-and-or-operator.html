@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical AND OR operator</title>
+</head>
+<body>
+
+
+    <script> 
+
+                    //  logical-OR-operator
+
+    //   Note: if user don't have value then right most value got assigned              
+      let user = '';
+      let greeting = `Hello, ${user || 'Stranger'}`;
+      
+      console.log(greeting);
+
+
+
+                //    logical-AND-operator
+      let isUserSmiling = true;
+      isUserSmiling && console.log('User is smiling');
+      
+
+
+                //   Logical AND OR Assignment operator
+      let dataDownloaded = 100;
+
+      let hasBeenDownloaded = dataDownloaded === 100;
+      hasBeenDownloaded &&= 'Data download now complete...';
+      hasBeenDownloaded ||= 'Downloading...';
+
+      console.log(hasBeenDownloaded);
+
+
+
+            //    nullish operator
+        let products = {
+        name: 'ravi kumar',
+        cost: 2500,
+        shipping: 0
+      }
+
+      console.log(`shipping: ${products.cost ?? 'N/A'}`);
+
+
+
+                             //    optional chaining operator
+
+                             let students = [
+                {
+                name: 'ravi',
+                roll:  1,
+             },
+             {
+                name: 'raje',
+                roll:  2,
+             },
+             {
+                name: 'rahul',
+                roll:  3,
+             },
+
+              ] 
+              
+              
+              console.log(`name: ${students[3]?.name ?? 'stranger'}`);
+
+    </script>
+    
+</body>
+</html>

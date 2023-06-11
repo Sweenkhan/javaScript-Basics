@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle-btn</title>
+</head>
+<body>
+
+    <div id="wrapper">
+        <p id="showContent"> </p>
+        <button id="showGreeting">Show greeting</button>
+        <button id="onOff">OFF</button>
+    </div>
+
+
+
+
+    <script>
+   
+   let showContent = document.querySelector('#showContent')
+   let greetBtn = document.querySelector('#showGreeting')
+   let toggleBtn = document.querySelector("#onOff")
+
+    
+   
+   let hadleGreetBtn = function(e) {
+    showContent.innerHTML = "Please Wait!";
+
+    setTimeout(() => {
+        for(let i=0; i < 1000000; i++) {
+        showContent.innerHTML = "Greeting from a slow Function" 
+    }
+     
+    }, 0)
+     
+   }
+
+   greetBtn.addEventListener('click', hadleGreetBtn)
+
+
+
+
+   let handleToggleBtn = function(e) { 
+    e.target.innerText === "OFF"  ? (e.target.innerText = "ON") : (e.target.innerText = "OFF") ;
+     
+   } 
+
+   toggleBtn.addEventListener('click', handleToggleBtn)
+   
+
+    </script>
+</body>
+</html>

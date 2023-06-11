@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval and SetTImeout</title>
+</head>
+<body>
+    
+    <div id="wrapper">
+        <input type="text" placeholder="Enter Name">
+        <button>Add Me</button>
+        <button>Print Array</button>
+        <p></p>
+    </div>
+
+    <script>
+
+        let names = [];
+
+        let input = document.querySelector("input")
+        let btn1 = document.querySelector("button:first-of-type")
+        let btn2 = document.querySelector("button:last-of-type")
+
+
+        // btn1.onclick = () => {
+        //     para.innerText = "Hello Javascript"
+        // }
+
+ // setInterval
+        // btn1.onclick = () => {
+        //     setInterval(() => {
+        //         para.innerText = "Hello Javascript" 
+        //     }, 3000)
+        // }
+
+
+
+ //  setTimeout
+        // btn1.onclick = () => {
+        //     setTimeout(() => {
+        //         para.innerText =  "Hello Javascript" 
+        //     }, 2000);
+        // }
+
+
+
+// example =2    
+
+          btn1.onclick = () => {
+            names.push(input.value);
+            console.log(names)
+            input.value = ''
+            input.focus();
+            console.log('name has been add')
+          }
+
+
+
+// another example       =>    
+
+          btn2.onclick = () => {
+            let para = document.querySelector('p')
+ 
+            
+            let i = 0;
+            let x =  setInterval(() => {
+                    if(i === names.length - 1) {
+                        para.innerHTML += names[i++]
+                        clearInterval(x)
+                    }else 
+                    para.innerHTML = para.innerHTML + names[i++] + ','  
+                }, 2000);
+        
+
+
+
+               
+            // let time = 1000;
+            // for(let i = 0; i < names.length; i++) {
+            //     setTimeout(() => {
+            //         if(i < names.length) {
+            //             para.innerHTML += names[i++]
+                       
+            //         } else {
+                      
+            //             para.innerHTML += names[i++] + ', ';
+            //         }
+            //     }, time)
+            //     time += 1000;
+            // }
+             
+         
+            }
+
+
+          
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+    <link rel="stylesheet" href="traversing.css">
+    <script src="https://kit.fontawesome.com/744a03f622.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="wrapper">
+       
+        <div class="box">
+            <div class="heading">
+                 <h2>Box 1</h2>
+                 <div class="icon">
+                    <i class="fa-solid fa-square-plus"></i>
+                 </div>
+            </div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur,   velit molestias asperiores cupiditate quibusdam atque ipsum, quam ad voluptatem culpa praesentium iure molestiae! Enim, soluta.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="heading">
+                 <h2>Box 2</h2>
+                 <div class="icon">
+                    <i class="fa-solid fa-square-plus"></i>
+                 </div>
+            </div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur,  velit molestias asperiores cupiditate quibusdam atque ipsum, quam ad voluptatem culpa praesentium iure molestiae! Enim, soluta.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="heading">
+                 <h2>Box 3</h2>
+                 <div class="icon">
+                    <i class="fa-solid fa-square-plus"></i>
+                 </div>
+            </div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur, velit molestias asperiores cupiditate quibusdam atque ipsum, quam ad voluptatem culpa praesentium iure molestiae! Enim, soluta.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="heading">
+                 <h2>Box 4</h2>
+                 <a class="icon">
+                    <i class="fa-solid fa-square-plus"></i>
+                 </a>
+            </div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur,  ferendis anim molestias asperiores cupiditate quibusdam atque ipsum, quam ad voluptatem culpa praesentium iure molestiae! Enim, soluta.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+  
+     const icons = document.querySelectorAll('i');
+
+     icons.forEach((icon) => {
+
+        icon.onclick = (e) => {
+            const paragraphs = e.target.parentElement.parentElement.nextElementSibling.children;
+          
+     
+            Array.from(paragraphs).forEach((para) => {
+                if(para.classList.contains('show')){
+                 para.classList.remove('show')
+            
+                } else {
+                para.classList.add('show');  
+              }
+               console.log(para.classList)
+            })
+     
+
+           if(e.target.classList.contains("fa-square-plus")) {
+              e.target.classList.remove("fa-square-plus")
+              e.target.classList.add("fa-square-minus")
+           }  else {
+            e.target.classList.remove("fa-square-minus")
+              e.target.classList.add("fa-square-plus")
+           }
+
+
+        }
+      
+     })
+         
+    </script>
+</body>
+</html>

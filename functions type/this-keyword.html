@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this.keyword</title>
+</head>
+<body>
+    
+
+    <script>
+
+                    //    example = 1
+
+    const person = {
+          name: 'sween khan',
+          age: 25,
+          profession: 'Software Engineer',
+          sayHi() {
+            return `Hi, my name is ${this.name}. I' am ${this.age} years old and .I'm a ${this.profession}`;
+          },
+          canDrive() {
+            return this.age >= 18 ? 'Yes' : 'No';
+          },
+    };
+
+    person.myJob = function () {
+        return `I work as a ${this.profession}`;
+    };
+
+    console.log(person.sayHi());
+    console.log(person.canDrive());
+    console.log(person.myJob());
+
+
+
+
+                            //  example 2
+
+    const khan = {
+    weight : 63,
+    height : 185,
+    age : 25,
+    gender : 'M'
+    }
+
+    const heena = {
+    weight : 47,
+    height : 165,
+    age : 22,
+    gender : 'F'
+    }
+
+    const calcBmi = function() {
+    return this.weight / (this.height / 100) ** 2;
+    }
+
+    const calcBmr = function () {
+        if (this.gender === 'M') {
+            return 66.47 + 13.75 * this.weight + 5.003 * this.height - 6.755 * this.age;
+        } else {
+            return 655.1 + 9.563 * this.weight + 1.85 * this.height - 4.676 * this.age;
+        }
+    };78
+
+    
+    // call a function within the context of an object = .call()
+    console.log(`Khan's BMI: ${calcBmi.call(khan)}`);
+    console.log(`khan's BMR: ${calcBmr.call(khan)}`);
+
+    console.log(`heena's BMI: ${calcBmi.call(heena)}`);
+    console.log(`heena's BMR: ${calcBmr.call(heena)}`);
+
+
+
+                    //    Bind()
+    
+    const khanBmi = calcBmi.bind(khan);
+    const heenaBmi = calcBmi.bind(heena);   
+    
+    const khanBmr = calcBmr.bind(khan);
+    const heenaBmr = calcBmr.bind(heena);
+
+    console.log(khanBmi());
+    console.log(heenaBmi());
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.welcome h4 {
+    font-size: 2rem;
+}
+
+
+button {
+    height: 50px;
+    width: 250px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.questionBox {
+    background-color: rgb(196, 33, 187);
+    width: 50%;
+    height: 50%;
+
+}
+        
+              /* QUESTION-DIV */
+              
+.question {
+    font-size: 1rem;
+}
+
+
+

@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reversing array
+
+    </title>
+</head>
+<body>
+    
+
+    <script>   
+        
+//  example=> reversing an array!       
+
+        let isPalandrom = (word) => {
+            let wordArr = [];
+            let revWord = [];
+
+        for(const w of word) {
+            wordArr.push(w);
+            revWord.push(w);
+        } 
+        
+        return wordArr.toString() === revWord.reverse().toString();
+        };
+
+        console.log(isPalandrom('lolol')? 'is a pandrome' : 'it is not a palandrome');
+
+
+
+// example =>    
+
+       const weatherData = [
+        {
+            location : 'hyderabad',
+            time :     "27-12-2022",
+            min :       '140km/hr',
+            max :       '220km/hr'
+        },
+        {
+            location : 'secunderabad',
+            time :     "27-12-2022",
+            min :       '150km/hr',
+            max :       '230km/hr'
+        },
+        {
+            location : 'nizamabad',
+            time :     "27-12-2022",
+            min :       '130km/hr',
+            max :       '210km/hr'
+        },
+       ];
+
+       for(const data of weatherData.reverse()) {
+        console.log(`${data.location} = Min : ${data.min}, Max : ${data.max}`)
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // example =>     forEach()
+
+        const users = 'id, first_name, last_name, gmail, gender \n 1, ravi, kumar, kumar@gmail.com, male \n 2, raju, katal, raju@gmail.com, male \n 3, pushpa, kumari, pushpa@gmail.com, female';
+
+        const csvToArray = (csv) => {
+            let output = [];
+            csv.split('\n').forEach((row) => output.push(row.split(',')));
+                
+            return output;
+        };
+
+        console.table(csvToArray(users));
+
+
+
+        // example= => 
+        
+        const books = [
+         {
+            id : 1,
+            title : 'Shantaram'
+        },
+        {
+            id : 2,
+            title : 'The design of Everyday things'
+        },
+        {
+            id : 3,
+            title: 'Frikonomics',
+        },
+        ]
+
+
+        console.log('My favourite Books');
+
+        books.forEach((elem, index) =>
+        console.log(`${index + 1}. ${elem.title}`));
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttp-Request</title>
+</head>
+<body>
+
+<div id="app">
+    <button>Refresh Me</button>
+    <div id="randomJoke"></div>
+</div>
+    
+</body>
+
+<script>
+    let uri = "https://icanhazdadjoke.com/"
+    let refreshBtn = document.querySelector("button")
+    let joke = document.querySelector("#randomJoke")
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.addEventListener('load', function() {
+           joke.innerHTML = `<h1>${this.responseText}</h1>`
+    });
+
+
+    refreshBtn.addEventListener("click", function() {
+        xhr.open('GET', uri);
+        xhr.setRequestHeader('Accept', 'text/plain');
+        xhr.send();
+    })
+    
+</script>
+</html>

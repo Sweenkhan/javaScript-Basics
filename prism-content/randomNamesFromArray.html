@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Names from Array</title>
+</head>
+<body>
+    
+    <div id="wrapper">
+
+    </div>
+
+
+
+    <script>
+     
+     let names = ['Ram', 'Shyam', 'Seeta', 'Geeta'];
+     let allreadyExist = [];
+     
+
+    for(let i = 0; i < names.length; i++) {
+        let randomIndex = getRandomValue();
+        document.write(names[randomIndex] + "<br>")
+    }
+
+
+ 
+
+     function getRandomValue(){
+        let random =  Math.floor(Math.random() *  names.length)
+
+        if(allreadyExist.includes(random)) {
+            return getRandomValue();
+        } else {
+            allreadyExist.push(random)
+            return random
+        }
+     }
+
+      
+
+                                //  RANDOM NUMBER LIST 
+
+    //  let numbers = []
+
+    //    for(let i = 0; i < 10; i++) {
+
+    //     let random = getRandomValue()
+    //      numbers.push(random)
+    //    }
+
+
+    //  function getRandomValue(){
+    //     let random =  Math.floor(Math.random() * 10 )
+
+    //     if(allreadyExist.includes(random)) {
+    //         return getRandomValue();
+    //     } else {
+    //         allreadyExist.push(random)
+    //         return random
+    //     }
+    //  }
+
+    //  console.log(numbers)
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For-loop</title>
+</head>
+<body>
+    
+
+    <script>   
+
+//   external = 1
+
+        let sum = 0;
+        for(let i=1; i <= 12; i++) {
+            console.log(`On the ${i} day of Christmis.`);
+            sum += i;
+        }
+
+        console.log(`sum of 1 to 12: ${sum}`);
+
+
+                        
+//   example = 2
+
+        let countDown = (count) => {
+            count === -1 ? console.log(`We have lift off...`) : console.log(count)
+        }
+        
+        for (let x = 10; x >= -1; x--) {
+                countDown(x)
+            }
+
+
+
+ // LOOPING ARRAY WITH OBJECTS    example = 3    
+              
+        let numArray = [{x: 0, y: 2}, {x: 50, y: 22}, {x: 55, y: 3}, {x: 6, y: 17}];
+        
+        const multNums = (obj) => obj.x * obj.y;
+
+
+        for(let n = 0; n < numArray.length; n++) {
+
+             console.log(`${numArray[n].x} x ${numArray[n].y} = ${multNums(numArray[n])}`)
+            
+            }
+
+
+
+   //   example= 4
+         
+        let fruits = ['mango', 'orange', 'banana', 'kiwi', 'papaya', 'grapes'];
+        
+        for(let i = 0; i < fruits.length; i++) {
+
+            if(fruits[i] === 'kiwi') break;
+            console.log(fruits[i]);
+        };
+         
+        
+                      
+//     looping with nested array. example = 5  
+
+        const stuff = [['Apples', 'Banana', 'kiwi', 'Orange'],['Potao', 'onion', 'tomato', 'Celery']];
+        
+        for(let n= 0; n < stuff.length; n++){
+            for(let m =0; m < stuff[n].length; m++){
+                console.log(stuff[n][m])
+            }
+        }
+
+        
+
+
+    </script>
+</body>
+</html>

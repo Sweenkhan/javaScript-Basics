@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+    
+     
+<div id="wrapper">
+    <div class="clock" style="text-align: center;"></div>
+</div>
+
+
+
+
+
+    <script>
+
+    setInterval(() => {
+        
+        let dt = new Date()
+
+let day = dt.getDate();
+let month = dt.getMonth() + 1;
+let year = dt.getFullYear();
+let hour = dt.getHours();
+let minute = dt.getMinutes();
+let seconds = dt.getSeconds();
+
+let showTime = document.querySelector('.clock')
+
+showTime.innerHTML = day + "/" + month + "/" + year + "<br />" +  hour + ':' + minute + ":" + seconds
+ 
+
+    },1000);
+
+  console.log(new Date('18 November 2022 21:00'))            
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator function</title>
+</head>
+<body>
+    
+
+    <script>
+
+     // first-Example =>
+
+        // function* getNums() {
+        //     yield 10;
+        //     yield 20;
+        //     yield 30;
+        // }
+
+
+        // const numsIterable = getNums();
+ 
+        // console.log(numsIterable.next());
+        // console.log(numsIterable.next());
+        // console.log(numsIterable.next());
+
+                // or 
+
+        // const nums = [...getNums()];
+
+        // console.log(nums);
+
+
+
+
+    // Example 2 =>
+       
+     function* getIds() {
+        let n = 0;
+        while(n <= 5) {
+            yield parseInt(Math.random() * 2000 );
+            n++;
+        }
+     }
+
+    const idIterables = getIds();
+
+
+    let loop = setInterval(() => {
+        let {value, done} = idIterables.next();
+
+        if(done) return clearInterval(loop);
+        console.log(value);
+    }, 900)
+
+
+    </script>
+</body>
+</html>

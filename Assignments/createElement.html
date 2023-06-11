@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create element</title>
+</head>
+<body>
+    
+
+    <script>
+        const makeHead =  () => {
+            
+        const first = document.createElement('h1');
+        first.setAttribute('class', 'wrapper');
+
+        document.body.prepend(first);
+        document.querySelector(".wrapper").innerHTML = 'lorem is the mist powerfull key in this world';
+    } 
+
+       const anchor = document.createElement('button');
+       anchor.setAttribute('id', 'hit-click' );
+
+       document.body.append(anchor);
+       document.querySelector('#hit-click').innerHTML = 'click me';
+      
+       const colorChange = () => {
+           anchor.style.backgroundColor = 'red';
+       }
+
+       const colorChangeb = () => {
+           anchor.style.backgroundColor = '#fff';
+       }
+
+       anchor.addEventListener('click', colorChange);
+       anchor.addEventListener('ondblclick', colorChangeb);
+         
+
+        makeHead();
+        makeHead(); 
+        
+    </script>
+</body>
+</html>

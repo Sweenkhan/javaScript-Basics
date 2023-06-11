@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHandler</title>
+    <link rel="stylesheet" href="htmlCssReact.css">
+</head>
+<body>
+     
+  <div id="wrapper">
+    <div class="links">
+         <a href="" class="active">HTML</a>
+         <a href="">CSS</a>
+         <a href="">JS</a>
+         <a href="">Node</a>
+         <a href="">React</a>
+    </div>
+
+    <div class="content">
+        <div class="con " id="html">
+            <h2>HTML</h2>
+            <P class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae fuga culpa aliquid laboriosam, omnis dolorum dignissimos voluptatum, amet est tempora at natus? Aperiam, consectetur! Officiis sint soluta odit quidem voluptates?</P>
+        </div>
+
+        <div class="con active" id="css">
+            <h2>CSS</h2>
+            <P class="para">CSS ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae fuga culpa aliquid laboriosam, omnis dolorum dignissimos voluptatum, amet est tempora at natus? Aperiam, consectetur! Officiis sint soluta odit quidem voluptates? Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, ullam.</P>
+        </div>
+
+        <div class="con " id="js">
+            <h2>JS</h2>
+            <P class="para">JS ipsum dolor,u r on a mission sit amet consectetur adipisicing elit.fuga culpa aliquid laboriosam, omnis dolorum dignissimos voluptatum, amet est tempora at natus? Aperiam, consectetur! Officiis sint soluta odit quidem voluptates?</P>
+        </div>
+
+        <div class="con " id="node">
+            <h2>NODE</h2>
+            <P class="para"> NODE icing elit. ishan is hi john could u abalorate this is css Repudiandae fuga culpa aliquid laboriosam, omnis dolorum dignissimos voluptatum, amet est tempora at natus? Aperiam, consectetur! Officiis sint soluta odit quidem voluptates?</P>
+        </div>
+
+        <div class="con " id="react">
+            <h2>REACT</h2>
+            <P class="para">React is a ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae fuga culpa aliquid laboriosam, omnis dolorum dignissimos voluptatum, amet est tempora at natus? Aperiam, consectetur! Officiis sint soluta odit quidem voluptates?</P>
+        </div>
+    </div>
+ 
+   </div>
+
+
+ 
+
+
+    <script>
+
+// let para = document.querySelectorAll("p")
+
+// 1.  eventHandler with annynomns function 
+
+       //   para.onmouseover = function() {
+       //     this.style.color = "white"
+       //   }
+
+       //   para.onmouseout = function () {
+       //     this.style.color = "black"
+       //   }
+
+
+
+// 2. eventHandler with fat arrow function    
+
+        // para.onmouseover = (e) => {
+        //     e.target.style.color = "white"
+        // }    
+
+        // para.onmouseout = (e) => {
+        //     e.target.style.color = "black"
+        // }
+
+
+    let anchor = document.querySelectorAll("a")
+    
+    // for(let i = 0; i < anchor.length; i++) {
+    //     anchor[i].onclick = (e) => {
+    //         e.preventDefault()
+    //         console.log("elon musk")
+    //     }
+    // }
+
+
+ anchor.forEach((current) => {
+    current.onclick = (e) => {
+        e.preventDefault();
+
+                             //  first Example
+
+        // anchor.forEach((current) => {
+        //        if(current.classList.contains("active")) {
+        //         current.classList.remove('active')
+        //        }
+        // })
+        document.querySelector('.links .active').classList.remove('active');
+        e.target.classList.add("active");
+ 
+
+        const clickedAnchor = e.target.innerHTML.toLowerCase();
+        const conDivs = document.querySelectorAll(".con") 
+        
+        conDivs.forEach((current) => {
+            if(current.getAttribute('id') === clickedAnchor) { 
+
+                document.querySelector('.content .active').classList.remove('active');
+                current.classList.add("active")
+
+            }
+            
+        })
+        
+    }
+ });
+
+
+    </script>
+</body>
+</html>

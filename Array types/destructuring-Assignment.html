@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring-Assignment</title>
+</head>
+<body>
+    
+
+    <script>
+
+//  example => 1;
+
+     let khan = ['Rebel khan', 25, 'coder'];
+     let [user, , profession] = khan;
+
+     console.log(user, profession);
+
+
+     
+//  example => 2;
+
+    let isLoading = true;
+    let showUi = false;
+
+    [isLoading, showUi] = [showUi, isLoading];
+
+    console.log(`isLoading: ${isLoading}`);
+    console.log(`showUi: ${showUi}`);
+    
+//  example => 3       
+    </script>
+</body>
+</html>

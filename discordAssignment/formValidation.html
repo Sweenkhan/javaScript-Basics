@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form - validatiion</title>
+</head>
+<body>
+
+    <div id="wrapper">
+        <form action="">
+            <input type="text" name="username" id="name" placeholder="Enter your name" required>
+            <span class="err"></span><br />
+
+            <input type="number" name="age" id="age" placeholder="Your Age" required>
+            <span class="err"></span><br />
+
+            <input type="number" name="mobile" id="phone" max="10" placeholder="Your Mobile" required>
+            <span class="err"></span><br />
+
+            <input type="email" name="email" id="email" placeholder="Your Email">
+            <span class="err"></span><br>
+
+            <input type="radio" name="gender"  value="male">Male
+            <input type="radio" name="gender"  value="female">Female
+            <input type="radio" name="gender"  value="other">Other
+            <span class="err"></span><br>
+
+            <select name="" id="hometown" >
+                <option value="" selected disabled>Select-Hometown</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Hydrabad">Hyderabad</option>
+                <option value="kolkata">kolkata</option>
+            </select><br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <script>
+        let frm = document.querySelector("form")
+
+        frm.onsubmit = (e) => {
+            e.preventDefault();
+
+            let name = document.querySelector("#name");
+            let age = document.querySelector("#age");
+            let phone = document.querySelector("#phone");
+            let email = document.querySelector("#email");
+            let radios = document.querySelector("input[type=radio]");
+            let hometown = document.querySelector("#hometown");
+
+
+            
+
+            let nameExp = /^[a-zA-Z ]{3, 30}$/
+            let ageExp = /^[0-9]{2}$/
+            let phoneExp = /^[0-9]{10}$/
+            let emailExp = /^[a-zA-Z0-9\.\+\_]+\@[a-zA-Z0-9]+\.[a-zA-Z]{2,5} $/
+        
+          
+
+            if(matchElement(name, nameExp, 'Enter only alphabate! length 3-30')) {
+                if(matchElement(age, ageExp, "Enter only numbers. Allowed Value 10-99")) {
+                    if(matchElement(phone, phoneExp, "Enter only numbers. Exact 10 numbers allowed")) {
+                        if(matchElement(email, emailExp, "Enter a valid email")) {
+                            if(matchElement2(radios, "select gender")) {
+                                if(matchElement3(hometown, "select your hometown")) {
+                                    document.querySelector("form").submit();
+                                }
+                            }
+                        }
+                    }
+                }
+                  
+            }
+        
+          return false;
+        
+        
+        }
+
+
+
+
+        function matchElement(element, regex, msg) {
+            if(element.value.match(regex)) {
+                element.nextElementSibling.innerHTML = '';
+                element.classList.remove('inputErr');
+                return true
+            }
+            else {
+                element.nextElementSibling.innerHTML = msg;
+                element.classList.add("inputErr");
+                element.focus();
+                return false
+            }
+        }
+
+
+
+        function matchElement2(elements, msg) {
+            let flag = false;
+
+            elements.forEach(element => {
+                if(element.checked) {
+                    flag = true;
+                }
+            })
+
+            if(flag === false) {
+                Array.from(elements)[elements.length - 1].nextElementSibling.innerHTML = msg;
+                return false;
+            } else {
+                Array.from(elements)[elements.length - 1].nextElementSibling.innerHTML = '';
+                return true;
+            }
+        }
+
+
+        function matchElement3(element, msg) {
+            if(element.value.length === 0) {
+                element.nextElementSibling.innerHTML = msg;
+                element.classList.add('inputErr')
+                return false; 
+            } 
+            else {
+                element.nextElementSibling.innerHTML = ''
+                element.classList.remove("inputErr");
+                return true
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

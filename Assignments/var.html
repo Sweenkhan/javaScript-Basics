@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    
+
+    <script>
+          'use strict'
+
+     function Book (title, author, isbn, stock, cost){
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.stock = stock;
+        this.cost = cost;
+
+        this.buy = qty => {
+            if(qty <= this.stock) {
+                console.log(`You have bought ${qty} ${this.title} quantity and the total cost is ${qty * this.cost}} `)
+            } else {
+                console.log(`${this.title} isn't available`)
+            }
+        }
+     };
+
+     const books = new Book(
+          'this design of everyday things',
+          'sween khan',
+          'ISBN : 9877777',
+          35,
+          17.70,
+     );
+
+     console.log(books.buy(30));
+   
+    </script>
+</body>
+</html>

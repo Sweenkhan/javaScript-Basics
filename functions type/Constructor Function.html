@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cunstructor Function</title>
+</head>
+<body>
+    
+
+    <script>
+                   
+                    // example = 1
+
+    function User(name, age, isAdmin) {
+        this.name= name;
+        this.age= age;
+        this.isAdmin= isAdmin;
+        this.canDrive = () => (this.age >= 18 ? 'yes' : 'no');
+        this.accessAccount = () => (isAdmin ? 'You have access..' : 'Access denied');
+    }  
+    
+    const sween = new User('S khan', 24, true);
+    const vikas = new User('Vikas', 17, false);
+
+    console.log(sween);
+    console.log(sween.canDrive());
+    console.log(sween.accessAccount());
+
+    console.log(vikas);
+    console.log(vikas.canDrive());
+    console.log(vikas.accessAccount());
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting-array</title>
+</head>
+<body>
+    
+
+    <script>
+
+//  example => sort()      
+
+const numAray = [983, 789, 388, 565, 80, 10, 539];
+
+const asc = [...numAray].sort((a,b) => a - b);
+const desc = [...numAray].sort((a,b) => b - a);
+
+console.log(`Ascendig: ${asc}`);
+console.log(`Descending: ${desc}`);
+
+
+
+// example => 2
+
+const perfumes = [
+  {
+    id: 1,
+    brand: 'Fruity by Kiwi 50ml',
+    cost: 300,
+  },
+  {
+    id: 2,
+    brand: 'Silly Smelly',
+    cost: 575,
+  },
+  {
+    id: 3,
+    brand: 'Ocean Mist by Ventuo',
+    cost: 1243,
+  },
+  {
+    id: 4,
+    brand: 'Spotlight',
+    cost: 991,
+  },
+ 
+];
+
+const mostExpensive = [...perfumes].sort((a, b) => b.cost - a.cost)[0];
+const cheapest = [...perfumes].sort((a, b) => a.cost - b.cost)[0];
+
+console.log(`Most Expensive: ${mostExpensive.brand} at $${mostExpensive.cost}`);
+console.log(`Cheapest: ${cheapest.brand} at $${cheapest.cost}`);
+
+    </script>
+</body>
+</html>

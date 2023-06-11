@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For-of & For-in</title>
+</head>
+<body>
+    
+    <script>
+
+        
+// example =>                           // FOR-OF
+
+        const users = [{
+            id: 1,
+            name: 'sween khan',
+            age: 25,
+            profession: 'data scientist'
+        },
+    {
+        id: 2,
+        name: 'vikas',
+        age: 22,
+        profession: 'software engginer'
+    },];
+
+
+    const introduction = (user) => `${user.name} is ${user.age} years old and works as a ${user.profession}`;
+
+    for(const user of users) {
+        console.log(introduction(user));
+    }
+
+                   
+
+// example =>                      //  FOR_IN
+
+    const user = {
+        id: 2,
+        name: 'Shubam',
+        age: 32,
+        profession: 'fsd'
+    }   
+    
+    for(const prop in user) {
+        console.log(prop);
+    }
+
+    
+    </script>
+</body>
+</html>

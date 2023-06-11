@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread....</title>
+</head>
+<body>
+    
+
+    <script>
+
+// example => clonning array  
+
+     const items = ['Mouse', 'Cable', 'Microphone'];
+     const itemsCopy = [...items];   
+
+     itemsCopy.push('USB hub');
+
+     console.log(`ITEMS: ${items}`);
+     console.log(`ITEMS-COPY: ${itemsCopy}`);
+
+
+
+
+// example => Concatenating Arrays
+
+      let primaryColors = ['Red', 'Green', 'Blue'];
+      let secondaryColors = ['Orange', 'Green', 'Violet'];
+
+//    let colorWheel = primaryColors.concat(secondaryColors);
+      let colorWheel = [...primaryColors, ...secondaryColors];
+
+      console.log(`Color Wheel: ${colorWheel}`);
+    
+    </script>
+</body>
+</html>

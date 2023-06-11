@@ -1,0 +1,152 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // let matrix = [
+        //     [1,2,3,6],
+        //     [4,5,6,7],
+        //     [7,8,9,6],
+        //     [3,2,6,5]
+        // ]
+
+        // document.write(matrix[0][0]+matrix[1][1]+matrix[2][2]+matrix[3][3])
+        // document.write(matrix[0][3]+matrix[1][2]+matrix[2][1]+matrix[3][0])
+
+
+
+        // Convert comma-separated data to an Array of string rows
+const csvToRows = (str) => {
+    return str.split("\n")
+};
+
+// Remove duplicate rows from the Array
+const removeDuplicateRows = (arr) => {
+    return arr.filter((item,index)=>arr.indexOf(item)===index)
+};
+
+// Convert Array of string rows to objects using the row at index 0 as property names
+const strRowsToObjects = (arr) => {
+    let output=[]
+  
+    arr.forEach(item=>{
+      
+      
+      output.push(item.split(","))
+    
+    }  )
+    
+    
+    let NewArrayOfObj=[]
+   
+   output.forEach((item,index)=>{
+     let obj={}
+     
+     
+     if(index!==0){
+       
+  
+       item.forEach((ele,index)=>{
+                
+         obj[output[0][index]]=ele
+         
+       })
+       
+       NewArrayOfObj.push(obj)
+     }
+     
+  
+   })
+  
+  return (NewArrayOfObj)
+
+
+
+
+};
+
+// Convert the registeredOn epoch timestamps to Date objects
+const timeToDate = (arr) => {
+    
+    arr.forEach((item)=>{
+    
+        return item.registeredOn= new Date(Number(item.registeredOn)*1000)
+      
+    })
+    
+    return arr
+};
+
+// Sort the array alphabetically (ascending) by first_name
+const sortByFirstName = (arr) => {
+    return arr.sort((a,b)=>a.first_name < b.first_name ? -1 : a.first_name > b.first_name ? 1 : 0)
+
+};
+
+// Add a new property named permissions to every object {admin: false,profile: true,billing: true,supervisor: false}
+const addUserPermissions = (arr) => {
+    let UserWithPermissions =[]
+  
+    arr.forEach((item)=>{
+      
+        UserWithPermissions.push({...item,
+          permissions:{
+              admin: false,
+               profile: true,
+              billing: true,
+              supervisor: false
+          }     
+      })
+      
+    })
+    
+    return UserWithPermissions
+  
+  
+};
+
+// Find user objects with bad ill-formed/bad email IDs and return them as result
+const findBadEmailIds = (arr) => {
+  const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  
+  let Filter
+  
+  arr.forEach(()=>{
+    
+     Filter =arr.filter((each)=> regex.exec(each.email)===null)
+    
+  })
+  
+ 
+  return Filter
+
+};
+
+// Implement the data processing pipeline using the functions above and return an array of user objects with no duplicates, sorted by first_name, timestamps converted to date objects and the user permissions object added.
+const processData = (data) => {
+    return addUserPermissions(sortByFirstName(timeToDate(strRowsToObjects(removeDuplicateRows((csvToRows(data)))))))
+
+};
+
+// PLEASE DO NOT DELETE/MODIFY THE CODE BELOW
+// module.exports = {
+//   csvToRows,
+//   removeDuplicateRows,
+//   strRowsToObjects,
+//   timeToDate,
+//   sortByFirstName,
+//   addUserPermissions,
+//   findBadEmailIds,
+//   processData,
+// };
+
+    </script>
+</body>
+</html>

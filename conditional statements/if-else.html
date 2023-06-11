@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if-else</title>
+</head>
+<body>
+    
+<script>
+    let currentHour = new Date().getHour();
+
+    if (currentHour >= 6 && currentHour <=12) {
+        console.log('Good Morning!');
+        } else if (currentHour >= 12 && currentHour < 16 ) {
+            console.log('Good Afternoon!');
+        } else if (currentHour >= 16 && currentHour < 20) {
+            console.log('Good evening!');
+        } else {
+            console.log('Good Night!')
+        }
+</script>
+
+</body>
+</html>

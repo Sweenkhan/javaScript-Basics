@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map-array</title>
+</head>
+<body>
+    
+
+    <script>
+
+// example =>  map()
+
+        const colors = ['Red', 'Green', 'Blue'];
+        const crayons = colors.map((elem) => `${elem} crayon!`);
+
+        console.log(crayons);
+
+
+// example => 2   
+
+        const numAray = [
+            [2, 3],
+            [12, 23],
+            [34, 9],
+            [55, 54.5],
+        ];
+
+       // const toSum = (arr) => arr.map((elem) => elem[0] + elem[1]);
+        const toSum = (arr) => arr.map(([a , b]) => a +b);
+
+        console.log(toSum(numAray));
+
+    
+// example => 3
+
+       const users = [
+        {
+            first_name: 'Rebel',
+            last_name:  'khan',
+            email: 'rebel1997@gmail.com',
+        },
+        {
+            first_name: 'Ravi',
+            last_name:  'kumar',
+            email: 'Ranjeet6784@gmail.com',
+        },
+        {
+            first_name: 'Raje',
+            last_name:  'katal',
+            email: 'raje098@gmail.com',
+        },
+        {
+            first_name: 'Manish',
+            last_name:  'kumar',
+            email: 'manish2233@gmail.com',
+        },
+       ];
+       
+       const genId = () => parseInt(Math.random() * 100000);
+       const withIds = users.map((user) => {
+           user.id = genId();
+           return user;
+       });
+
+       console.log(withIds);
+
+    </script>
+</body>
+</html>

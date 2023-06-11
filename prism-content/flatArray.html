@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat - Array</title>
+</head>
+<body>
+    <div id="wrapper">
+
+    </div>
+
+    <script>
+
+
+// 2D Array   =>
+
+
+//     let array = [13, 14, [5, 6, 7], 9, 5, [70, 22, 14], 55];
+
+
+//     let flatArray = [];
+//     let sum = 0;
+
+
+//     for(let i = 0; i < array.length; i++){
+//         if(typeof array[i] === 'object'){
+//             for(let j = 0; j < array[i].length; j++ ) {
+//                 flatArray.push(array[i][j])
+//             }
+//         }
+//         else {
+//             flatArray.push(array[i])
+//         }
+//     }
+
+
+//    for (let n = 0; n < flatArray.length; n++) {
+//     sum += flatArray[n]
+//    } 
+
+//    console.log(flatArray)
+//    console.log(sum)
+
+
+
+
+// 3D Array     =>
+
+let array = [13, 14, [5, 6, 7, [4, 10]], 9, 5, [70, 22, [10, 4]], 55];
+
+let flatarray = [];
+
+
+
+for(let i = 0; i < array.length; i++) {
+  
+    if(typeof array[i] === 'object') {
+
+        for( let j = 0; j < array[i].length; j++ ){
+               
+            if(typeof array[i][j] === 'object') {
+                for(let k = 0; k < array[i][j].length; k++){
+                       flatarray.push(array[i][j][k])
+                }
+            } else {
+               
+                flatarray.push(array[i][j])
+            } 
+        } 
+
+    }  else {
+        flatarray.push(array[i]);
+    }
+  
+}
+
+console.log(flatarray)
+
+    </script>
+</body>
+</html>

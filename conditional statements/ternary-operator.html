@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternary-operator</title>
+</head>
+<body>
+     
+
+<script>
+ 
+    //    expression ? operandIfTruthy : operandIfFalsy
+
+    //  first example
+    let temprature = 25;
+    let feelTemp = temprature >= 25 ? 'warm' : 'cool';
+
+    console.log(`Today is ${feelTemp} day`);
+
+
+    
+     //  second example
+
+     let cost = 1500;
+     let discount = cost < 1000  ?  0  :  10;
+
+     let totalCost = cost - cost * (discount / 100);
+
+     console.log(`Original Cost is : $${cost}`);
+     console.log(`Total Payble : ${totalCost}`);
+
+
+
+    //  third example
+
+    let today = new Date().getDay();
+    let day = today === 0 ? 'Sunday' : today === 1 ? 'Monday' : today === 2 ? 'Tuesday' : today === 3 ? 'Wednsday' : today === 4 ? 'Thursday' : today === 5 ? 'Fridday'
+    : today === 6 ? 'Saturday' : 'not exactly a real day...' ;
+
+    console.log(`Today is ${day}`);
+
+</script>
+
+
+
+</body>
+</html>

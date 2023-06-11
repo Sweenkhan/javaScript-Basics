@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>split-join-array</title>
+</head>
+<body>
+    
+
+    <script>
+
+// example=>  .split(' ')
+
+        const str = 'House No.98, Philip Street, Mangrove Drive, Timberville - 800123';
+
+        console.log(str.split(', '));
+
+
+
+// example=>  .join(' ') 
+
+       const greet = ['Hello', 'how are you', 'It is so nice to meet you again!'];
+
+       console.log(greet.join(' '));
+
+
+
+// example=> split and join
+
+const users = "Id, first_name, last_name, email, gender \n 1, sween, khan, bkyadagmail.com, Male \n 2, vikas, tomar, vikasgmail.com, male \n 3, jyoti, vyas, jyotigmail.com, female";
+
+const cscToArr = csv => {
+    let output = [];
+    for (const row of csv.split('\n')) {
+        output.push(row.split(','));
+    }
+
+    return output;
+};
+
+console.table(cscToArr(users));
+
+
+
+
+    </script>
+</body>
+</html>

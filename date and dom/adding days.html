@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding days</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // example adding days with function
+
+
+        const now = new Date();
+
+        console.log(`Now: ${now.toLocaleString()}`);
+
+
+
+        // Adding days
+
+        const addDays = (dateObj = new Date(), days = 0) => {
+            const daysToMs = days * 864_00_000;
+            return new Date(dateObj.getTime() + daysToMs);
+        };
+         
+
+
+        // Adding Hours
+
+        const addHours = (dateObj = new Date(), hours = 0) => {
+            const hoursToMs = hours * 36_00000;
+            return new Date(dateObj.getTime() + hoursToMs);
+        };
+
+       
+        // Adding Minutes
+         
+        const addMins = (dateObj = new Date(), mins = 0) => {
+            const minsToMs = mins * 6_0000;
+            return new Date(dateObj.getTime() + minsToMs);
+        };
+
+
+        
+
+        console.log(addDays(now, 7).toLocaleString());
+        console.log(addHours(now, 4).toLocaleString());
+        console.log(addMins(now, 11).toLocaleString());
+
+    </script>
+</body>
+</html>

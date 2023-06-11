@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array-of & array.from </title>
+</head>
+<body>
+    
+
+    <script>
+
+// example => array.of()        
+
+const myArray = Array('Apple', 'kiwi');
+console.log(myArray);
+
+let numArray = Array.of(10);
+console.log(numArray);
+
+
+
+// example =>  Array.from()     
+
+const randomNumbers = (count) =>
+Array.from(new Array(count), (elem) => parseInt(Math.random() * 100));
+
+console.log(randomNumbers(10));
+
+
+    </script>
+</body>
+</html>

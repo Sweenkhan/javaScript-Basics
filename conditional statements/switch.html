@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+<body>
+    
+
+   <script>
+
+                                        //   BASIC EXAMPLE WITH SWITCH STATEMENT
+
+
+     let a = 20;
+     let b = 50;
+
+     let action = 'ADD';
+
+     switch (action){
+        case 'ADD':{
+            let sum = a + b;
+            console.log(`The sum of ${a} and ${b} is ${sum}`);
+        break;
+        }
+
+        case 'SUBTRACT': {
+            let diff = a - b;
+            console.log(`The subtract of ${a} and ${b} is ${diff}`);
+        break;
+        }
+           
+        case 'MULTIPLY': {
+            let multiply = a * b;
+            console.log(`The multiply of ${a} and ${b} produces ${multiply}`);
+        break;
+        }
+
+        case 'DIVISION': {
+            let division = a / b;
+            console.log(`The division of ${a} and ${b} produces ${division}`);
+        break;
+        }
+        default: {
+            throw new Error('Invalid action...');
+        }
+        };
+
+
+
+                                                    //    ANOTHER EXAMPLE OF SWITCH STATEMENT
+
+
+
+          
+         let item = 'potato';
+         let type;
+         
+         switch(item){
+           
+            case 'apple':
+            case 'banana':
+            case 'kiwi':
+            case 'strawbery':
+              type = 'fruit';
+              break;
+
+            case 'lettuce':
+            case 'potato':
+            case 'celery': 
+            case 'eggplant': 
+              type = 'vegetable';
+              break;
+            
+            default: {
+                throw new Error('Unable to identify item...');  
+
+            }
+         }
+                                                    
+        console.log(`${item} is a type of ${type}`);
+
+        
+
+   </script> 
+</body>
+</html>

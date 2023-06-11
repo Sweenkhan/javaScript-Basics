@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        const book1 = {
+            id: 1,
+            title: 'Frekonomics',
+            publisher: 'Marpet torch',
+            cost: 4.99,
+            overview() {
+                return `${this.title}, publish by ${this.publisher} retails for $${this.cost}`;
+
+            },
+        };
+
+        const book2 = {
+            id: 1,
+            title: 'Frekonomics',
+            publisher: 'Marpet torch',
+            cost: 4.99,
+        };
+
+// example1 =>
+
+        const showDetail = (book) =>
+         book.hasOwnProperty('overview') 
+         ? console.log(book.overview())
+         : console.log('Unable to show details...');
+ 
+         showDetail(book1);
+        showDetail(book2);
+
+
+
+// example2 with in and hasOwnProperty
+
+       console.log('title' in book2);
+       console.log(book1.hasOwnProperty('title'));
+
+
+
+// example3 =>
+
+
+       const rectangles = [
+  {
+    id: 'Rectangle - 01',
+    width: 129.2,
+    height: 80.9,
+  },
+  {
+    id: 'Rectangle - 02',
+    width: 342,
+    height: 120,
+    area() {
+      return this.width * this.height;
+    },
+  },
+];
+
+ 
+
+const calcArea = function () {
+    return this.width * this.height;
+  };
+
+  rectangles.forEach((rect) =>
+     console.log(
+      `${rect.id} : ${
+         rect.hasOwnProperty('area') ? rect.area() : calcArea.call(rect)
+      }`
+    )
+  );
+
+
+
+    </script>
+</body>
+</html>

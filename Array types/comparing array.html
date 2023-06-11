@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON.Stringify</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        const arrA = [1, 2, 3, 4, 2, 6, {id:1}, {id: 2}, "Hello"];
+        const arrB = [1, 2, 3, 4, 5, 6, {id:1}, {id: 2}, "Hello"];
+
+        const isIdentical = (arrA, arrB) => 
+             JSON.stringify(arrA) === JSON.stringify(arrB);
+
+        console.log(
+            `Array A ${isIdentical(arrA, arrB) ? 'is' : 'is not'} equal to Array b`);
+        
+
+    </script>
+</body>
+</html>

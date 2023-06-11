@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructing assignment</title>
+</head>
+<body>
+    
+    
+    <script>
+     
+// example => Destructing assignmet with (array) 
+
+     const [wishList, reading] = ['zero to One', 'Shantaram'];
+     
+     console.log(wishList, reading);
+
+
+// example => Destructing assignment with (Object)  
+
+    const {title, publisher, author, cost} = {
+        id: 1,
+        title: 'Freakonomics',
+        publisher: 'Harpet torch',
+        author : [
+            {
+                authorcode: 210,
+                name: 'Steven D. Levitt'
+            },
+            {
+                authorcode : 231,
+                name: 'Stephen J. Dubner'
+            }
+        ],
+        cost: 7.99
+    }
+
+    console.log(`${title} is published by ${publisher} and is written by ${author.map((el) => el.name).join(' and ')}, It costs $${cost}`);
+
+
+
+// example => 2
+    
+const apple = {
+  id: 209891,
+  company: 'Apple Inc',
+  exchange: 'NASDAQ',
+  symbol: 'AAPL',
+  currPrice: 120.07,
+  details: {
+    ceo: 'Tim Cook',
+    hq: 'Cupertino, California, US',
+  },
+};
+
+ 
+const {
+    company,
+    exchange,
+    currPrice,
+    details: { ceo },
+  } = apple;
+ 
+ 
+try {
+  console.log(
+    `${company} headed by ${ceo} was trading for $${currPrice} on ${exchange}`
+  );
+} catch (error) {
+  console.log('Stock data could not be accessed...');
+}
+
+
+    </script>
+</body>
+</html>

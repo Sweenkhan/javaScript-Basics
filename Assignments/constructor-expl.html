@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor-example</title>
+</head>
+<body>
+    
+    <script>
+
+        const Product = function(name, description, cost, stock) {
+            this.name = name;
+            this.description = description;
+            this.cost = cost;
+            this.stock = stock;
+            let revenue = 0;
+
+            this.buy = (qty) => {
+                if(qty <= this.stock) {
+                    this.stock = this.stock - qty;
+                    let costOfOrder = qty * this.cost;
+                    revenue += costOfOrder;
+                    console.log(`${qty} of ${this.name}: $${costOfOrder}`)
+                } else {
+                    console.log(`We are out of stock ${this.name}`)
+                };
+            };
+
+            
+            this.getStock = () => `Avaiable quantity is ${this.stock} units`;
+
+            this.salesReport = () => `Total sales for ${this.name}: $${revenue}`;
+
+        };
+
+
+ 
+        const mobile = new Product (
+                'Redmi Pro',
+                 'The fastes mobile invented ever',
+                  11000,
+                  40);
+           
+        const laptop = new Product (
+            'Mackbook pro',
+            'New gaming laptop',
+            55200,
+            35
+        );
+
+
+                            //  Action
+
+    console.log(mobile.buy(12));
+    console.log(mobile.buy(17))
+    console.log(mobile.getStock())
+    console.log(mobile.salesReport())
+
+
+    console.log(laptop.buy(12));
+    console.log(laptop.buy(17))
+    console.log(laptop.getStock())
+    console.log(laptop.salesReport())
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter-array</title>
+</head>
+<body>
+    
+
+    <script>
+
+ // example 1 => .filter();    
+        
+        const numAray = [982, 703, 402, 388, 396, 85, 511];
+
+        const evenNums = numAray.filter((elem) => elem % 2 === 0 );
+        const oddNums = numAray.filter((elem) => elem % 2 !== 0 );
+
+        console.log(`Even: ${evenNums}`);
+        console.log(`OddNums: ${oddNums}`);
+
+
+
+// example 1 => .filter();  an array with object:
+
+        const products = [
+            {
+               name: 'Hepa Filter',
+               isAvailable: true,
+            },
+            {
+                name: 'UV Lamp',
+                isAvailable: true,
+            },
+            {
+                name: 'HDMI Cable',
+                isAvailable: false,
+            },
+            {
+                name: 'lcd',
+                isAvailable: false,
+            },
+        ];
+
+        const isAvailable = products.filter((elem) => elem.isAvailable);
+        const notAvailable = products.filter((elem) => !elem.isAvailable);
+
+        console.log(notAvailable);
+    </script>
+</body>
+</html>

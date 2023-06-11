@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+       
+       let inputs = ["America", "india", "nepal", "Bhutan", "auckland", "canada", "Egypt"];
+
+       let output = {};
+
+
+       inputs.forEach((input) => {
+        
+         let firstLetter = input.slice(0,1).toLowerCase();
+         let splittedCountrie = input.split('');
+
+         splittedCountrie.splice(0, 1,  firstLetter.toUpperCase());
+
+         output[firstLetter] = (Object.keys(output).includes(firstLetter))
+
+         ? [...output[firstLetter], splittedCountrie.join('')]
+
+         : output[firstLetter] = [splittedCountrie.join('')]
+
+
+       })
+
+       console.log(output)
+    </script>
+</body>
+</html>

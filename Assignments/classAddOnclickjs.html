@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Add On Click</title>
+    <link rel="stylesheet" href="classAddOnClick.css">
+</head>
+<body>
+    <div id="Wrapper">
+
+
+        <div class="tabs">
+            <a href="" class="active">HTML</a>
+            <a href="">CSS</a>
+            <a href="">JS</a>
+            <a href="">React</a>
+            <a href="">Nodejs</a>
+        </div>
+
+        <div class="content">
+            <div class="con active" id="html">
+                <h2>HTML</h2>
+                <p>Html ipsum dolor sit amet consectetur adipisicing elit. Aliquam a sequi nam alias perferendis laudantium qui praesentium officia vitae,  nemo odio, deleniti officiis! Rem incidunt laudantium eos temporibus. Autem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis doloremque quisquam nam vel, dolore aperiam distinctio </p>
+            </div>
+            <div class="con " id="css">
+                <h2>CSS</h2>
+                <p>Css ipsum dolor sit amet consectetur adipisicing elit. Aliquam a sequi nam alias perferendis laudantium qui praesentium officia vitae,  nemo odio, deleniti officiis! Rem incidunt laudantium eos temporibus. Autem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis doloremque quisquam nam vel, dolore aperiam distinctio </p>
+            </div>
+            <div class="con " id="js">
+                <h2>JS</h2>
+                <p>Js ipsum dolor sit amet consectetur adipisicing elit. Aliquam a sequi nam alias perferendis laudantium qui praesentium officia vitae,  nemo odio, deleniti officiis! Rem incidunt laudantium eos temporibus. Autem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis doloremque quisquam nam vel, dolore aperiam distinctio </p>
+            </div>
+            <div class="con " id="react">
+                <h2>REACT</h2>
+                <p>React ipsum dolor sit amet consectetur adipisicing elit. Aliquam a sequi nam alias perferendis laudantium qui praesentium officia vitae,  nemo odio, deleniti officiis! Rem incidunt laudantium eos temporibus. Autem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis doloremque quisquam nam vel, dolore aperiam distinctio </p>
+            </div>
+            <div class="con " id="nodejs">
+                <h2>NODEJS</h2>
+                <p>Nodejs ipsum dolor sit amet consectetur adipisicing elit. Aliquam a sequi nam alias perferendis laudantium qui praesentium officia vitae,  nemo odio, deleniti officiis! Rem incidunt laudantium eos temporibus. Autem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis doloremque quisquam nam vel, dolore aperiam distinctio </p>
+            </div>
+        </div>
+         
+         
+    </div>
+
+    <script>
+             
+             const anchors = document.querySelectorAll('a');
+
+            anchors.forEach((current) => {
+                 current.onclick = (e) =>{
+                       e.preventDefault();
+
+                       anchors.forEach((current) => {
+                             if(current.classList.contains('active')) {
+                                current.classList.remove('active')
+                             }
+                       })
+  
+                       e.target.classList.add('active');
+
+
+                       const conDivs = document.querySelectorAll('.con');
+
+                       const clickedAnchors = e.target.innerHTML.toLowerCase();
+
+
+                       conDivs.forEach((current) => {
+                            if(current.classList.contains("active")){
+                                current.classList.remove('active')
+                            }
+                        })
+
+
+                       conDivs.forEach((current) => {
+                            if(current.getAttribute('id') === clickedAnchors){
+                                current.classList.add('active');
+                            }
+                       })
+
+                       
+
+                 }
+            })
+
+     
+    </script>
+</body>
+</html>

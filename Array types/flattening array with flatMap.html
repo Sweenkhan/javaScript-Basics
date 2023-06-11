@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flat and flatmap</title>
+</head>
+<body>
+    
+
+    <script>
+
+        const array = [
+            [45, 56, 45],
+            [56, 67, 73],
+            [33, 22, 11],
+            [
+              [45, 99, 77],
+              [90, 80, 70]
+            ],
+            [
+              [46, 45, 44],
+              [90, 80, 70]
+            ],
+            [45, 56, 45],
+            [56, 00, 73],
+            [33, 99, 11],
+        ]
+
+        // const flating = array.flat(2);
+
+        const flating = array.flatMap((elem) => elem.flat());
+
+        console.log(flating);
+
+
+
+    </script>
+</body>
+</html>

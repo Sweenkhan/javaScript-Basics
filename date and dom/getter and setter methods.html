@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter and setter</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+       const log = str => console.log(str);
+
+        const now = new Date();
+
+
+        // now.setDate(10);
+        // now.setMonth(7)
+        // now.setFullYear(2020)
+
+
+        log(now.getDate());
+        log(now.getDay());
+        log(now.getMonth());
+        log(now.getFullYear());
+
+        log(now.getHours());
+        log(now.getMinutes());
+        log(now.setSeconds());
+
+        log(now.getTimezoneOffset() / 60);
+        log(now.toTimeString());
+
+    </script>
+</body>
+</html>

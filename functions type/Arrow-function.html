@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow - function</title>
+</head>
+<body>
+    
+
+    <script>
+
+                //  examples
+            
+    const areaOfRect = (l, w) => Number(l) * Number(w);
+    const perimeterOfRect = (l,w) => 2 * (Number(l) + Number(w));
+    
+
+    
+                //  Another-example
+    const createUser = (user, age, isAdmin) => ({
+        user,
+        age,
+        isAdmin,
+    });
+
+    let john = createUser('S. Khan', 24, true);
+
+    
+    
+    console.log(areaOfRect(5, 10));
+    console.log(perimeterOfRect(20, 30));
+    console.log(john);
+
+    </script>
+</body>
+</html>

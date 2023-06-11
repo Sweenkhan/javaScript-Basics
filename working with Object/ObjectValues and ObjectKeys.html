@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object key and values</title>
+</head>
+<body>
+    
+
+    <script>
+
+const book = {
+            id: 1,
+            title: 'Frekonomics',
+            publisher: 'Marpet torch',
+            cost: 4.99,
+            author: 'Sween khan',
+            isbn: '19761080173' 
+        };
+
+// examples of Object.keys()
+
+console.log(Object.keys(book));          /* 1 */
+
+if(Object.keys(book).includes('title')) {     /* 2 */
+    console.log(book.cost);
+} 
+
+
+
+// examples of Object.values()
+ 
+console.log(Object.values(book));           /* 1 */
+
+const findVal = (val, obj) => Object.values(obj).includes(val);    /* 2 */
+console.log(findVal('Sween khan', book));
+        
+
+
+// examples of Object.entries()
+
+Object.entries(book);
+
+for(let [key, val] of Object.entries(book)) {
+    console.log(key, val);
+}
+    </script>
+</body>
+</html>

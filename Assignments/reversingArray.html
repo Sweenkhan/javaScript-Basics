@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reversing - array</title>
+    <link rel="stylesheet" href="reversingArray.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        
+            <input type="text" placeholder="Enter Name">
+             
+            <button>Add Me</button>
+            <button>Print Reverse</button>
+            <p></p>
+       
+    </div>
+
+    <script>
+           
+
+           let names = [];
+           let reversed = [];
+
+           let pValue = document.querySelector("p")
+           let btn1 = document.querySelector("button:first-of-type")
+           let btn2 = document.querySelector("button:last-of-type")
+           let input = document.querySelector('input')
+           
+             
+
+          btn1.onclick= () => {
+         
+           if(input.value.length > 0) {
+            names.push(input.value);
+            input.value = ""
+            input.focus()
+            console.log(names)
+        } else {
+            alert("plzz right a name")
+        }
+
+        }
+
+        
+
+        btn2.onclick = () => {
+            reversed = names.reverse();
+            
+            reversed.forEach((e) => {
+
+                e.split('').reverse().join('');
+            });
+            
+            pValue.innerHTML = reversed 
+        }
+
+
+    </script>
+</body>
+</html>
