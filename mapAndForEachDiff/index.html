@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let numArr = [1, 4, 9] 
+        
+
+        // it will mutes original array 
+          numArr.forEach((val, i, arr) => {  
+           return arr[i] = val * 2
+        })  
+
+ 
+        // it will return us new array-------with simple function
+        let res = numArr.map(function(ele){
+            return ele * 2
+        })
+ 
+
+        // it will return us new array------  with call back function
+        let res2 = numArr.map(ele => ele * 3)
+        
+
+        // console.log(res, res2)
+    </script>
+    
+</body>
+</html>
