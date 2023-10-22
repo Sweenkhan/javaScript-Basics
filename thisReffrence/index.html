@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script> 
+    
+        const Object = {
+            message: "Hello Everyone",
+            logMessage(){
+                console.log(this.message)
+            }
+        }
+
+        // setTimeout( Object.logMessage(), 4000)  //this will give us instantly
+        
+        setTimeout(() => {Object.logMessage()}, 4000)   // after 4 seconds you will get message.
+       
+
+    </script>
+</body>
+</html>
