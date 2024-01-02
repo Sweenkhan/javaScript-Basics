@@ -1,0 +1,31 @@
+.container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column; */
+} 
+
+.first, .second, .third{ 
+    display: block;
+    width: 36px;
+    height: 4px;
+    margin-bottom: 5px;
+    background-color: rgb(54, 49, 49);
+    transition: all 0.3s;
+}
+
+.menu.change .first{
+    transform: translate(0, 9px) rotate(45deg);
+}
+
+.menu.change .second{
+    opacity: 0;
+}
+.menu.change .third{ 
+    transform:  translate(0, -9px) rotate(-45deg);
+}

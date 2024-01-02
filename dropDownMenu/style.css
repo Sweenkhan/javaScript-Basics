@@ -1,0 +1,40 @@
+.dropdown{
+    display: inline-block;
+    position: relative;
+}
+
+.dropBtn{
+    font-size: 1.5rem;
+    background-color: lightgreen;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dropdown .dropdown-Cnt{
+    display: none;
+    position: absolute;
+    z-index: 1; 
+    width: 100%;
+    box-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+.dropdown .dropdown-Cnt a{
+    text-decoration: none;
+    padding: 5px;
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    display: block; 
+}
+
+
+.dropdown .dropdown-Cnt a:hover{
+    background-color: rgb(148, 143, 143);
+}
+
+.dropdown:hover .dropdown-Cnt{
+    display: block; 
+}

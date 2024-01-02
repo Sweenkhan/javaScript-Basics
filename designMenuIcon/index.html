@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Menu Icon</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="menu"> 
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+        </div>
+    </div>
+
+
+    <script>
+        let menuRotate = document.querySelector(".menu")
+
+        menuRotate.addEventListener("click", () => {
+            menuRotate.classList.toggle("change")
+        })
+        
+    </script>
+</body>
+</html>
