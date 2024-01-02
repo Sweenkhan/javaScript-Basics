@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Api</title>
+</head>
+
+<body>
+
+    <h2>Text Copied</h2>
+    <input type="text" />
+    <button onclick="writeClipBoard()">Click Me</button>
+
+    <button onclick="clicking()">Go Back</button>
+    <script>
+        // CLIPBOARD API = (This API provides access to the operating system's clipboard. 
+        // You can use it to build copy button to copy/paste content)
+
+
+        // 1. Copying from innerText
+
+        // const writeClipBoard = async () => {
+
+        //     try{
+        //     let text = document.querySelector("h2")
+        //     // text.select()
+        //     await navigator.clipboard.writeText(text.innerText);
+        //     alert( " copied to the clipboard")
+        // } catch (error){
+        //    console.log(error)
+        // }
+        // }   
+
+
+        // 2. Copying from input value
+
+        const writeClipBoard = async () => {
+
+            try{
+            let text = document.querySelector("input")
+            text.select()
+            await navigator.clipboard.writeText(text.value);
+            alert("'" + text.value + "'" +  "  copied to the clipboard")
+
+            text.value = ""
+        } catch (error){
+           console.log(error)
+        }
+        } 
+
+
+        //--------- LOCAL STORAGE API == (It lets you store data against the website address in the form of key value pairs.  
+        //           Local storage is limited to 5 MB-------------)
+
+        //    Add data to local storage
+        localStorage.setItem("Name", "Sween Khan");
+
+        //    Get data from local storage
+        let check = localStorage.getItem("Name")
+
+        //    Delete data from local storage  
+        localStorage.removeItem("Name")
+        console.log(check)
+
+
+
+      console.log(window.history.back())
+     
+       
+
+
+    </script>
+</body>
+
+</html>
