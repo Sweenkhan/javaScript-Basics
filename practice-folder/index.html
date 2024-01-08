@@ -1,0 +1,113 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily-practice</title>
+</head>
+
+<body>
+
+    <script>
+        //     Question 1: Reverse a String
+        //     Write a function that takes a string as input and returns the string reversed.
+
+        // 1. 
+        // function reverseString(str) {
+        //     let reverse = ""
+
+        //     for (let i = str.length - 1; i >= 0; i--) {
+        //         reverse += str[i]
+        //     }
+        //     return reverse
+        // }
+
+        // 2nd way
+        function reverseString(str){ 
+           return str.split("").reverse().join("") 
+        }
+
+        console.log(reverseString("Hello"));
+// -----------------------------------------------------------------------------------------------------------  
+
+
+// Question 2: Find the Factorial of a Number
+// Write a function to calculate the factorial of a given number.
+
+//1st way
+// function factorial(n) {
+
+//   let result = []
+//   for(let i = n; i>0; i--){ 
+//      result.push(i)
+//   } 
+//  let num =  result.reduce((a ,b ) =>  a * b )
+//   return num
+// }
+
+
+//2nd way
+ function factorial(n){
+    let result = 1;
+
+    for(let i = n; i>0; i--){
+        result *= i 
+    }
+    return result
+ }
+
+console.log(factorial(5));
+
+
+// -----------------------------------------------------------------------------------------------------------  
+
+
+// Question 3: Check for Palindrome
+// Write a function that checks if a given string is a palindrome (reads the same backward as forward
+
+//1.
+function isPalindrome(str) {
+  
+    let paldr = false;
+    
+    if(str === str.split("").reverse().join("")){
+        paldr = true
+    }else{
+        paldr = false;         
+    }
+  return paldr;
+
+}
+ 
+console.log(isPalindrome("level")); // Output: true
+
+
+// -----------------------------------------------------------------------------------------------------------  
+
+
+// Question 4: Find the Largest Element in an Array
+// Write a function that finds the largest element in an array.
+
+function findLargest(arr) {
+
+    // let numbers = arr
+    let numbers = arr
+    let large = numbers[0]
+
+    for(let i = 0; i<numbers.length(); i++){
+        if(large < numbers[i]){
+            large = numbers[i]
+        } 
+    }
+    // console.log(numbers)
+    
+    return large
+}
+
+console.log(findLargest([3, 1, 4, 1, 5, 9, 2])); // Output: 9
+
+    </script>
+
+</body>
+
+</html>
