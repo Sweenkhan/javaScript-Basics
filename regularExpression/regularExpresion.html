@@ -1,0 +1,39 @@
+<html DOCTYPE>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <title>REGULAR-EXPRESSION</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./style.css" /> -->
+</head>
+
+<body>
+    <script>
+        //EXAMPLE => 1
+        const originalString = 'The quick brown fox jumps over the lazy dog. The dog is not amused.';
+        const searchString = 'dog';
+        const replacement = 'cat';
+
+        const regex = new RegExp(searchString, 'g');
+        const modifiedString = originalString.replace(regex, replacement);
+        const modified = originalString.replaceAll("dog", "dogy")
+
+      
+        console.log(modified) // 'The quick brown fox jumps over the lazy dogy. The dogy is not amused.'
+        console.log(modifiedString); // Output: 'The quick brown fox jumps over the lazy cat. The cat is not amused.'
+
+
+
+        //EXAMPLE => 2
+        function palindrome(str){
+           
+            let removeExtra = str.replace(/[^a-zA-Z0-9]/g, "").toLowerCase()
+            return removeExtra === removeExtra.split("").reverse().join("")
+            
+        }
+
+        console.log(palindrome("amma"))
+    </script>
+</body>
+
+</html>
